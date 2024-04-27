@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+        .result-item-header {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">Analysis Result</h1>
+    <div class="card">
+        <div class="card-body">
+            {% if gpt_response %}
+                <ul class="list-unstyled">
+                    {% for item in gpt_response.split('- ') %}
+                        {% if item.strip() %}
+                            <li class="result-item">
+                                {% set parts = item.split(': ', 1) %}
+                                {% if parts|length > 1 %}
+                                    <span class="result-item-header">{{ parts[0] | trim }}: </span>{{ parts[1] | trim }}
+                                {% else %}
+                                    <span class="result-item-header">{{ parts[0] | trim }}</span>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No information provided.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{{ url_for('home') }}" class="btn btn-primary">Upload another file</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
