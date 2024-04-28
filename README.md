@@ -12,8 +12,8 @@ Users can upload their resume in PDF format, and the system will provide constru
 
 #### Installation and Setup
 1. **Clone the repository**
-   git clone [repository-url]
-   cd [repository-directory]
+   -git clone [repository-url]
+   -cd [repository-directory]
 
 2. **Set up the API key**
    - Obtain your GPT API key from the provider.
@@ -34,11 +34,11 @@ Users can upload their resume in PDF format, and the system will provide constru
      
 
 5. **Install required packages**
-   pip install -r requirements.txt
+   -pip install -r requirements.txt
    - If any required tools are not installed, you may need to install them manually.
 
 6. **Start the Flask application**
-   flask run
+   -flask run
 
 ### Usage
 Once the application is running, navigate to `http://127.0.0.1:5000/` on your web browser.
