@@ -44,3 +44,7 @@ Users can upload their resume in PDF format, and the system will provide constru
 Once the application is running, navigate to `http://127.0.0.1:5000/` on your web browser.
 Upload your PDF resume using the interface provided, and submit it to receive feedback.
 The system will analyze your resume and return detailed feedback on how to improve your resume sentences and wording.
+
+### Link to Demo: 
+https://youtu.be/Evn-plJZiqs
+
